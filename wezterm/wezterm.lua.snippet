@@ -1,0 +1,19 @@
+-- terminal-logos: faint dotted Ghostty ghost centered behind the text.
+-- Add to ~/.wezterm.lua (or ~/.config/wezterm/wezterm.lua) before `return config`.
+-- WezTerm draws backgrounds per window, not per pane, so with splits there's one ghost
+-- in the middle of the window rather than one per pane.
+local logos = (os.getenv('XDG_DATA_HOME') or (wezterm.home_dir .. '/.local/share')) .. '/terminal-logos'
+
+config.background = {
+  -- Solid layer first, in the same color you passed to make-dotted-logos.py --bg.
+  { source = { Color = '#1e1e2e' }, width = '100%', height = '100%' },
+  {
+    source = { File = logos .. '/ghostty-logo-bg.png' },
+    width = 'Contain',
+    height = 'Contain',
+    horizontal_align = 'Center',
+    vertical_align = 'Middle',
+    repeat_x = 'NoRepeat',
+    repeat_y = 'NoRepeat',
+  },
+}

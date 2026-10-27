@@ -1,0 +1,8 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.ruff_cache/
+# Generated logos and downloaded trademarked sources never belong in the repo.
+*.png
+!docs/*.png

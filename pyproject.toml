@@ -1,0 +1,15 @@
+# Tooling config only: the scripts are standalone (make-dotted-logos.py declares its own
+# dependencies inline per PEP 723; logo-pty.py is standard library only).
+[tool.ruff]
+line-length = 120
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF", "S", "PTH"]
+ignore = [
+    "S603", # logo-pty.py execs the CLI the user asked to run
+    "S606",
+]
+
+[tool.ruff.format]
+quote-style = "double"
